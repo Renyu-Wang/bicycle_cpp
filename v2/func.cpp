@@ -104,9 +104,12 @@ void set_weight(itpp::bvec a4, int begin4, int w4, int l4){
                 }
                 
                 d4 = common::quantum_dist_v2(Hx4, Hx4, 0);
-                std::cout << "n = " << 2*l4 <<", k = " << k4 << "\n"; 
-                std::cout << "a = " << a4 << "\n";
-                std::cout << "d = " << d4<< "\n";
+
+                if(d4 > 2 & d4 < 999){
+                    std::cout << "[n,k,d] = [" << 2*l4 <<", "<< k4 <<", "
+                        << d4 << "], rate = " << k4/(2*l4) << ", a = "<< a4 << "\n"; 
+                }
+                
                 
             }
         }

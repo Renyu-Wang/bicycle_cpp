@@ -19,7 +19,7 @@ int main(int argc, char **argv){
     data.open ("data.txt");
     
 
-    for(int l = 2*w; l <= 10; l++){ 
+    for(int l = 2*w; l <= 100; l++){ 
 
         std::cout << "w = " << w << ", l = " << l << "\n";
 
@@ -31,6 +31,7 @@ int main(int argc, char **argv){
 
         set_weight(a, 1, w, l);
 
+
     }
 
     data.close();
@@ -38,5 +39,8 @@ int main(int argc, char **argv){
     std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> time_span = (end - start)/1000;
     std::cout << "Run-time " << time_span.count() << " seconds.\n";
+    std::cout << "Run-time " << time_span.count()/60 << " minutes.\n";
+    std::cout << "Run-time " << time_span.count()/3600 << " hours.\n";
+
     return 0;
 }
